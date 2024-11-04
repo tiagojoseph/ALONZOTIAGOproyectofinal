@@ -1,0 +1,40 @@
+{% extends "inicio/index.html" %}
+
+{% block title_head %} Editar perfil {% endblock title_head %}
+
+{% block header %} Editar perfil {% endblock header%}
+
+{% block main %}  
+<form action= {% url 'usuarios:editar_perfil' %} method="post">
+    {% csrf_token %}
+    
+    <ul>
+        <li>
+            <label for="id_nombre">Usuario:</label>
+            {{ form.username }}
+        </li>
+        <li>
+            <label for="id_nombre">Nombre:</label>
+            {{ form.first_name }}
+        </li>
+        <li>
+            <label for="id_apellido">Apellido:</label>
+            {{ form.last_name }}
+        </li>
+        <li>
+            <label for="id_email">Email:</label>
+            {{ form.email }}
+        </li>
+        <li>
+            <label for="id_password1">Nueva Contraseña:</label>
+            {{ form.password }}
+        </li>
+        <li>
+            <label for="id_password2">Repetir Nueva Contraseña:</label>
+            {{ form.password2 }}
+        </li>
+    </ul>
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>
+{% endblock main %}  

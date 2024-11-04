@@ -1,0 +1,18 @@
+{% extends "inicio/index.html" %}
+
+{% block title_head %} Registro {% endblock title_head %}
+
+{% block header %} Registro {% endblock header%}
+
+{% block main %}
+
+
+<form action= {% url "usuarios:registrarse" %} method="post">
+    {% csrf_token %}
+
+    {{form}}
+    <input type="submit" value= "Registrarse">
+
+</form>
+
+{% endblock main %}
